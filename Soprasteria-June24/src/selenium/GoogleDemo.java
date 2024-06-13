@@ -17,8 +17,23 @@ public class GoogleDemo extends BaseClass{
 		Thread.sleep(2000);
 		List<WebElement> hints = driver.findElements(By.xpath("//span[contains(text(),'testing')]"));
 		Thread.sleep(2000);
-		System.out.println(hints.size());//total size of the suggestions
+		int suggestions = hints.size();//total number of the suggestions
 		screenShot();
+		System.out.println(hints.size());//total no of suggestions
+		String suggestion;
+		for(int i=0;i<suggestions;i++)
+		{
+			System.out.println(hints.get(i).getText());
+			suggestion=hints.get(i).getText();
+			if(suggestion.contains("testing types"))//true
+			{
+				hints.get(i).click();
+				break;
+			}
+			else
+				System.out.println("Keyword not matching");
+		}
+		
 		//closeBrowser();
 	}
 
