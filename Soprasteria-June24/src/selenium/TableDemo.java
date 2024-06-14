@@ -31,6 +31,11 @@ public class TableDemo extends BaseClass{
 			System.out.println(rowname.getText());
 		}
 		
+		//capture the particular cell value
+		WebElement cell=driver.findElement(By.xpath("//table[@class='dataTable']/tbody/tr[4]/td[3]"));
+		System.out.println("Cell value is : "+cell.getText());
+		
+		
 		//closeBrowser();
 	}
 
